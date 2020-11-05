@@ -68,7 +68,7 @@ function paintUI(){
         /* call the create ekenebt to render li to DOM */
         /* htmlCode += createLIElement(data[i]); */
 
-        const htmlCode = `
+        htmlCode += `
 
         <li class="item">
             <div class="card-content">
@@ -93,7 +93,11 @@ function paintUI(){
 
     /* append the generated html code inside the ul */
 
-    msg.innerHTML += htmlCode;
+    msg.innerHTML = htmlCode;
+
+
+
+
 
 }
 
@@ -244,7 +248,7 @@ const code = `
 
 });
 
-document.addEventListener("DOMContentLoaded", paintUI);
+document.addEventListener("DOMContentLoaded", paintUI());
 
 
 
