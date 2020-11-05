@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/1231e9e673.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- CARD -->
+        <div class="card">
+
+            <!-- CARD TOP (FILTER & DATE)-->
+            <div class="card-top">
+                <div class="search-div">
+                    <!-- SEARCH (FILTER) -->
+                    <form id="form-search">
+                        <i class="fas fa-search"></i>
+                        <input class="search" type="text" placeholder="search">
+                    </form>
+                </div>
+                <!-- DATE -->
+                <div class="date">
+                    <div class="date-one">
+                        <h1 id="day-date"></h1>
+                    </div>
+                    <div class="date-two">
+                        <h2 id="month"></h2>
+                        <p id="year"></p>
+                    </div>
+                    <div class="date-three">
+                        <p id="weekday"></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CARD BOTTOM -->
+            <div class="card-bottom">
+                <div>
+                    <ul id="msg">
+<!--                         <li class="item">
+                            <div class="card-content">
+                                <h2 id="list-headline">Check emails</h2>
+                                <p id="list-text">ddd</p>
+                            </div>
+                            <div class="card-content-time-stars">
+                                <p id="list-time">12:00</p>
+                                <p id="list-stars">
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                </p>
+                            </div>
+                        </li>    -->
+                    </ul>
+                </div>
+                
+                <!-- FORM (INPUT) -->
+                <form id="input-group" class="card-bottom-form">
+                    
+                    <div id="pop-up">
+                        <div id="title-input">
+                            <input id="title" type="text" placeholder="Title..">
+                            <input id="input" type="text" placeholder="Text..">
+                        </div>
+                        <div id="input">
+                            <input id="time" type="time"><br>
+                            <span class="fa fa-star starhover"></span>
+                            <span class="fa fa-star starhover"></span>
+                            <span class="fa fa-star starhover"></span>
+                            <button type="button" class="submit">Submit</button>
+                        </div> 
+
+                    </div>
+                    <!-- ADD BUTTON -->
+                    <div class="div-add-btn">
+                        <button id="add-btn">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <script src="/js/app2.js"></script>
+</body>
+</html>
