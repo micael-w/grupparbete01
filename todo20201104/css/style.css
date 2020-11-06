@@ -163,7 +163,7 @@ ul{
     
     width: 90%;
 
-    box-shadow: 1px 1px 10px 1px #888888;
+/*     box-shadow: 1px 1px 10px 1px #888888;        moved this to .item below*/
 }
 .item{
     display: flex;
@@ -172,6 +172,8 @@ ul{
 
     padding: 0.9rem;
     border-left: 6px solid rgb(164, 226, 72);
+    margin-bottom: 1rem;
+    box-shadow: 1px 1px 10px 1px #888888;
 }
 
 /*List Content*/
