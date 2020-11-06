@@ -56,17 +56,18 @@ function paintUI(){
         data = [];
     }
 
-    /* UI */
-
     let htmlCode = "";
 
-    /* loop over the data to decide and paint the tasks in DOM */
+    /* loop through the data from localStorage */
+
     for(let i = 0; i < data.length; i++){
+
+        /* pass the current i to the function that parses */
+        /* and extracts the values we want in our list item */
 
         getLocalStorageItems(i);
 
-        /* call the create ekenebt to render li to DOM */
-        /* htmlCode += createLIElement(data[i]); */
+        /* append li items to our list */
 
         htmlCode += `
 
@@ -87,11 +88,11 @@ function paintUI(){
 
             `;
 
-            console.log(htmlCode);
+/*             console.log(htmlCode); */
 
     }
 
-    /* append the generated html code inside the ul */
+    /* give the list of lis to the ul */
 
     msg.innerHTML = htmlCode;
 
@@ -111,7 +112,11 @@ function createNewListObject(title, input, time){
         objectTime:     time
     }
 
+    /* push object into array */
+
     listOfItems.push(newObject);
+
+    /* insert array into localStorage */
 
     localStorage.setItem("localStorageItems", JSON.stringify(listOfItems));
 
@@ -128,16 +133,23 @@ function clearInputFields(){
 /* get object from local storage */
 
 function getLocalStorageItems(i){
+    /* store localStorage in an array */
     const localStorageArray = (localStorage.getItem("localStorageItems"));
-/*     console.log(localStorageArray); */
+
+    /* parse the array so we can use object methods */
     const localStorageParse = JSON.parse(localStorageArray);
-/*     console.log(localStorageParse); */
+
+    /* initialize an array */
 
     const objectsArray = [];
+
+    /* push the value for current i into the array */
 
     objectsArray.push(localStorageParse[i].objectTitle);
     objectsArray.push(localStorageParse[i].objectInput);
     objectsArray.push(localStorageParse[i].objectTime);
+
+    /* assign these values to our globally declared variables */
 
     parsedTitle = objectsArray[0];
     parsedInput = objectsArray[1];
@@ -147,7 +159,7 @@ function getLocalStorageItems(i){
     console.log(localStorageParse[i].objectInput); 
     console.log(localStorageParse[i].objectTime);  */
 
-    return [parsedTitle, parsedInput, parsedTime];
+/*     return [parsedTitle, parsedInput, parsedTime]; */
 
 
 }
@@ -188,7 +200,8 @@ function getLocalStorageItems(i){
 filterInput.addEventListener('keyup', filterNames);
 
 function filterNames(){
-    // Get value of input
+    /* store the value of search input and convert it to uppercase to make */
+    /* it case insensitive */
     let filterValue = document.querySelector('.search').value.toUpperCase();
 
     // Get names ul
@@ -197,7 +210,8 @@ function filterNames(){
     let li = ul.querySelectorAll('li.item');
 
     // Loop through collection-item lis
-    for(let i = 0;i < li.length;i++){
+    for(let i = 0; i < li.length; i++){
+        /* specify that we want to search the title h2 */
         let h2 = li[i].getElementsByTagName('h2')[0];
         // If matched
         if(h2.innerHTML.toUpperCase().indexOf(filterValue) > -1){
